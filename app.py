@@ -1,8 +1,11 @@
 import discord
-import os
 import random
 
 client = discord.Client()
+
+tokenFile = open(".token", "r")
+TOKEN = tokenFile.read()
+tokenFile.close()
 
 phraselist = [
     'callese we',
@@ -43,4 +46,4 @@ async def on_message(message):
         return
     await message.channel.send(random.choice(phraselist))
 
-client.run('ODY0OTMxNjY2MjUzMDUzOTgy.YO8oYg.K9yDrIUAlHHGlAVz_3ae5Uxk160')
+client.run(TOKEN)
